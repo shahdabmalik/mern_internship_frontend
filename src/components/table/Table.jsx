@@ -29,6 +29,10 @@ const Table = () => {
         }
         getList()
     }, [selectedMonth, search, currentPage, dispatch])
+    // set search to emplty string after month chage
+    useEffect(() => {
+        setSearch("")
+    }, [selectedMonth])
 
     // Next buttun handler
     const handleNextPage = () => {
@@ -52,7 +56,7 @@ const Table = () => {
                 <SelectInput />
             </div>
             <div className="my-5 overflow-auto" >
-            <h3 className="text-2xl pb-5 font-medium" >Table</h3>
+                <h3 className="text-2xl pb-5 font-medium" >Table</h3>
                 <table className="border-seprate w-full px-5" >
                     <thead className="border" >
                         <tr className="border" >
